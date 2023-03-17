@@ -126,76 +126,70 @@ export default {
       this.loader = false;
     },
     addPitsa(id) {
-      this.pitsas.forEach((t) => {
-        if (t.id == id) {
-          t.count++;
+      this.pitsas.forEach((item) => {
+        if (item.id == id) {
+          item.count++;
           const pitsa = {
             id: id,
-            name: t.name,
-            image: t.image,
+            name: item.name,
+            image: item.image,
             count: 1,
-            sizeBtn: t.sizeBtn,
-            structure: t.structure,
+            sizeBtn: item.sizeBtn,
+            structure: item.structure,
             price:
-              t.sizeBtn == "sm"
-                ? t.price.small
-                : t.sizeBtn == "md"
-                ? t.price.medium
-                : t.price.big,
+              item.sizeBtn == "sm"
+                ? item.price.small
+                : item.sizeBtn == "md"
+                ? item.price.medium
+                : item.price.big,
           };
           this.pitsa = pitsa;
-          console.log(t, "asosiy  ");
         }
       });
       //
       if (this.korzina.length !== 0) {
-        console.log("uzunlik bor");
-        this.korzina.forEach((z) => {
-          if (z.id === this.pitsa.id) {
-            console.log("id teng");
+        this.korzina.forEach((item) => {
+          if (item.id === this.pitsa.id) {
             if (
-              z.sizeBtn == this.pitsa.sizeBtn &&
-              z.structure == this.pitsa.structure
+              item.sizeBtn == this.pitsa.sizeBtn &&
+              item.structure == this.pitsa.structure
             ) {
-              z.count += 1;
-              z.price = this.pitsa.price;
-              console.log("olcham teng");
+              item.count += 1;
+              item.price = this.pitsa.price;
             } else if (
-              z.sizeBtn !== this.pitsa.sizeBtn ||
-              z.structure !== this.pitsa.structure
+              item.sizeBtn !== this.pitsa.sizeBtn ||
+              item.structure !== this.pitsa.structure
             ) {
               this.korzina.push(this.pitsa);
-              console.log("o'lcham teng emas");
             }
           } else {
             this.korzina.push(this.pitsa);
-            console.log("id teng emas");
           }
         });
       } else {
         this.korzina.push(this.pitsa);
       }
       console.log(this.pitsa, "pista");
-      console.log(this.korzina, "yakuniy");
+      console.log(this.korzina, "korzinka");
     },
     ///
     structure(id, format) {
-      this.pitsas.forEach((t) => {
-        if (t.id === id) {
+      this.pitsas.forEach((item) => {
+        if (item.id === id) {
           if (format == "trad") {
-            t.structure = "trad";
+            item.structure = "trad";
             if (!this.size) {
-              t.price.small = Math.round(t.price.small * 1.1);
-              t.price.medium = Math.round(t.price.medium * 1.1);
-              t.price.big = Math.round(t.price.big * 1.1);
+              item.price.small = Math.round(item.price.small * 1.1);
+              item.price.medium = Math.round(item.price.medium * 1.1);
+              item.price.big = Math.round(item.price.big * 1.1);
               this.size = true;
             }
           } else if (format == "thin") {
-            t.structure = "thin";
+            item.structure = "thin";
             if (this.size) {
-              t.price.small = Math.round(t.price.small / 1.1);
-              t.price.medium = Math.round(t.price.medium / 1.1);
-              t.price.big = Math.round(t.price.big / 1.1);
+              item.price.small = Math.round(item.price.small / 1.1);
+              item.price.medium = Math.round(item.price.medium / 1.1);
+              item.price.big = Math.round(item.price.big / 1.1);
               this.size = false;
             }
           }
@@ -203,9 +197,9 @@ export default {
       });
     },
     sizeMethod(id, type) {
-      this.pitsas.forEach((t) => {
-        if (t.id == id) {
-          t.sizeBtn = type;
+      this.pitsas.forEach((item) => {
+        if (item.id == id) {
+          item.sizeBtn = type;
         }
       });
     },
