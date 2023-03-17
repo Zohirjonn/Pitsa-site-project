@@ -70,11 +70,11 @@
           </div>
           <div>
             <button
-              class="border border-orange-2 text-base py-2 px-4 rounded-large font-bold flex items-center justify-between gap-2"
+              class="border border-orange-2 text-base py-2 px-4 rounded-large font-bold flex items-center justify-between gap-2 btn"
               :class="
                 item.count !== 0 ? 'text-orange-1 ' : 'text-white-1 bg-orange-1'
               "
-              @click="countMethod(item.id)"
+              @click="addPitsa(item.id)"
             >
               + Добавить
               <span
@@ -107,11 +107,10 @@ export default {
   data() {
     return {
       pitsas: [],
-      count: 0,
+      pitsa: {},
       loader: true,
       pitsaType: false,
-      sizeBtn: "sm",
-      size: false,
+      korzina: [],
     };
   },
   mounted() {
@@ -126,14 +125,60 @@ export default {
       console.log(res);
       this.loader = false;
     },
-    countMethod(id) {
+    addPitsa(id) {
       this.pitsas.forEach((t) => {
         if (t.id == id) {
           t.count++;
+          const pitsa = {
+            id: id,
+            name: t.name,
+            image: t.image,
+            count: 1,
+            sizeBtn: t.sizeBtn,
+            structure: t.structure,
+            price:
+              t.sizeBtn == "sm"
+                ? t.price.small
+                : t.sizeBtn == "md"
+                ? t.price.medium
+                : t.price.big,
+          };
+          this.pitsa = pitsa;
+          console.log(t, "asosiy  ");
         }
       });
-      this.count++;
+      //
+      if (this.korzina.length !== 0) {
+        console.log("uzunlik bor");
+        this.korzina.forEach((z) => {
+          if (z.id === this.pitsa.id) {
+            console.log("id teng");
+            if (
+              z.sizeBtn == this.pitsa.sizeBtn &&
+              z.structure == this.pitsa.structure
+            ) {
+              z.count += 1;
+              z.price = this.pitsa.price;
+              console.log("olcham teng");
+            } else if (
+              z.sizeBtn !== this.pitsa.sizeBtn ||
+              z.structure !== this.pitsa.structure
+            ) {
+              this.korzina.push(this.pitsa);
+              console.log("o'lcham teng emas");
+            }
+          } else {
+            this.korzina.push(this.pitsa);
+            console.log("id teng emas");
+          }
+        });
+      } else {
+        this.korzina.push(this.pitsa);
+      }
+      console.log(this.pitsa, "pista");
+      console.log(this.korzina, "yakuniy");
     },
+    ///
     structure(id, format) {
       this.pitsas.forEach((t) => {
         if (t.id === id) {

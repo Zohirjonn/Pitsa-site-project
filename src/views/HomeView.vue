@@ -3,7 +3,7 @@
     <Header />
   </div>
   <div>
-    <Pitsa />
+    <Pitsa @korzina="korzinaMethod" />
   </div>
 </template>
 <script>
@@ -13,6 +13,18 @@ export default {
   components: {
     Header,
     Pitsa,
+  },
+  data() {
+    return {
+      korzinka: [],
+    };
+  },
+  methods: {
+    korzinaMethod(item) {
+      console.log(item);
+      this.korzinka = item;
+      console.log(this.korzinka);
+    },
   },
 };
 </script>

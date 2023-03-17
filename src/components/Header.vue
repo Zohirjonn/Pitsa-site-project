@@ -2,7 +2,7 @@
   <div class="flex justify-between">
     <div class="flex justify-around space-x-2">
       <button
-        class="py-14px bg-white-2 px-7 font-bold rounded-large hover:bg-black-3 hover:text-white-1 duration-300"
+        class="py-14px bg-white-2 px-7 font-bold rounded-large hover:bg-white-3 hover:text-white-1 duration-300"
         v-for="button in buttons"
         :key="button"
       >

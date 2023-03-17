@@ -6,6 +6,7 @@ module.exports = {
       maxWidth: {
         "1340px": "1340px",
         "820px": "820px",
+        "560px": "560px",
       },
       borderWidth: {
         DEFAULT: "1px",
