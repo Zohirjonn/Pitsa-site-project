@@ -3,29 +3,21 @@
     <Header />
   </div>
   <div>
-    <Pitsa @korzina="korzinaMethod" />
+    <Pizza />
   </div>
 </template>
 <script>
 import Header from "../components/Header.vue";
-import Pitsa from "../components/Pitsa.vue";
+import Pizza from "../components/Pizza.vue";
 export default {
   components: {
     Header,
-    Pitsa,
+    Pizza,
   },
   data() {
-    return {
-      korzinka: [],
-    };
+    return {};
   },
-  methods: {
-    korzinaMethod(item) {
-      console.log(item);
-      this.korzinka = item;
-      console.log(this.korzinka);
-    },
-  },
+  methods: {},
 };
 </script>
 <style lang=""></style>

@@ -12,6 +12,10 @@ export default {
     Korzinka,
     Empty,
   },
+  data() {
+    return {
+    }
+  },
 };
 </script>
 <style lang=""></style>
