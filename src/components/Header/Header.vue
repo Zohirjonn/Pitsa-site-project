@@ -1,7 +1,7 @@
 <template>
-  <div class="flex justify-between mb-35px">
-    <HeaderButtons />
-    <FilterPitsa />
+  <div class="flex justify-between mb-35px items-start">
+    <HeaderButtons class="flex-4"/>
+    <FilterPitsa class="flex-1"/>
   </div>
 </template>
 <script>

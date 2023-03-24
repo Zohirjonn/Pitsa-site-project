@@ -53,11 +53,11 @@
           <div class="font-extrabold text-2xl flex items-center">
             <span>от {{ item.price }}₽</span>
           </div>
-          <div>
+          <div :class="pizza.size == null ? '' : 'btn'">
             <button
               class="border border-orange-2 text-base py-2 px-4 rounded-large font-bold flex items-center justify-between gap-2"
               :class="
-                (pizza.size == null ? '' : 'btn',
+                (
                 item.count !== 0
                   ? 'text-orange-1 '
                   : 'text-white-1 bg-orange-1')
@@ -143,19 +143,17 @@ export default {
                 el.size == pizza.size
             );
           }
-          console.log(item.id);
-          console.log(index, "index");
           if (index == -1) {
             // this.basket.push(pizza);
             this.$store.commit("basketPushMethod", { value: pizza });
           } else {
             // this.basket[index].count++;
             this.$store.commit("basketCountIncrement", { value: index });
-            console.log(this.getBasket, "basket");
+            // console.log(this.getBasket, "basket");
           }
         }
       }
-      this.pizza.size = null;
+      // this.pizza.size = null;
       this.pizza.count = 1;
     },
     typesMethod(item, typeItem) {

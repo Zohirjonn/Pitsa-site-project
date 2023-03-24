@@ -15,7 +15,7 @@ module.exports = {
         tt: " 0px 2px 4px rgba(0, 0, 0, 0.04)",
       },
       padding: {
-        "1px": "1px",
+        DEFAULT: '1px',
         "14px": "14px",
         "22px": "22px",
         "30px": "30px",

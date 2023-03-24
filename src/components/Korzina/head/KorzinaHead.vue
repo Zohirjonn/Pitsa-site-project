@@ -6,18 +6,20 @@
     </div>
     <div
       class="flex justify-center space-x-1 flex-initial w-48 items-center btn"
+      @click="clearBasket"
     >
       <div class="bg-trash-img bg-no-repeat bg-cover p-3"></div>
-      <img
-        src="../assets/images/iconfinder_trash-2_3324927 1.svg"
-        class="btn"
-        alt=""
-      />
       <span class="text-white-3 hover:text-orange-1">Очистить корзину</span>
     </div>
   </div>
 </template>
 <script>
-export default {};
+export default {
+  methods: {
+    clearBasket() {
+      this.$store.commit("clearBasketMethod");
+    },
+  },
+};
 </script>
 <style lang=""></style>

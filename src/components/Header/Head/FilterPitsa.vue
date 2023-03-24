@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-between items-center space-x-3">
+  <div class="flex justify-end w-full items-start space-x-3">
     <span>
       <img src="../../public/images/Vector (4).svg" alt="" />
     </span>

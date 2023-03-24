@@ -1,7 +1,7 @@
 <template>
-  <div class="flex justify-around space-x-2">
+  <div class="flex justify-start items-start flex-wrap gap-2">
     <button
-      class="py-14px bg-white-2 px-10 font-bold rounded-large hover:bg-white-3 duration-300 active:bg-black-1 active:text-white-1"
+      class="py-14px bg-white-2 px-10 font-bold rounded-large hover:bg-orange-2 duration-100 active:bg-orange-1 active:text-white-2 border border-orange-1"
       v-for="button in buttons"
       :key="button"
     >
@@ -21,6 +21,42 @@ export default {
         "Гриль",
         "Острые",
         "Закрытые",
+        // "Все",
+        // "Мясные",
+        // "Вегетарианская",
+        // "Мясные",
+        // "Вегетарианская",
+        // "Гриль",
+        // "Острые",
+        // "Гриль",
+        // "Острые",
+        // "Закрытые",
+        // "Мясные",
+        // "Вегетарианская",
+        // "Все",
+        // "Закрытые",
+        // "Все",
+        // "Гриль",
+        // "Острые",
+        // "Закрытые",
+        // "Все",
+        // "Мясные",
+        // "Вегетарианская",
+        // "Мясные",
+        // "Вегетарианская",
+        // "Гриль",
+        // "Острые",
+        // "Гриль",
+        // "Острые",
+        // "Закрытые",
+        // "Мясные",
+        // "Вегетарианская",
+        // "Все",
+        // "Закрытые",
+        // "Все",
+        // "Гриль",
+        // "Острые",
+        // "Закрытые",
       ],
     };
   },

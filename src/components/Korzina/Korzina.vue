@@ -6,9 +6,9 @@
   </div>
 </template>
 <script>
-import KorzinkaHead from "./Body/KorzinaHead.vue";
-import KorzinkaCards from "./Body/KorzinaCards.vue";
-import KozinkaFooter from "./Body/KorzinaFooter.vue";
+import KorzinkaHead from "./head/KorzinaHead.vue";
+import KorzinkaCards from "./head/KorzinaCards.vue";
+import KozinkaFooter from "./head/KorzinaFooter.vue";
 
 export default {
   components: {
@@ -16,10 +16,7 @@ export default {
     KorzinkaCards,
     KozinkaFooter,
   },
-  methods: {
-    decrementMethod() {},
-    incrementMethod() {},
-  },
+
 };
 </script>
 <style lang="scss"></style>

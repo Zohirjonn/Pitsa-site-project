@@ -16,16 +16,24 @@
       </div>
       <div class="calculate flex justify-between items-center space-x-20">
         <div class="space-x-4 flex items-center font-extrabold">
-          <div class="bg-de-img bg-cover bg-no-repeat p-3 btn"></div>
-
+          <div
+            class="bg-de-img bg-cover bg-no-repeat p-3 btn"
+            @click="countMethod(item, 'decrement')"
+          ></div>
           <p>{{ item.count }}</p>
-          <div class="bg-in-img bg-cover bg-no-repeat p-3 btn"></div>
+          <div
+            class="bg-in-img bg-cover bg-no-repeat p-3 btn"
+            @click="countMethod(item, 'increment')"
+          ></div>
         </div>
         <div class="font-extrabold text-xl">
           <p>{{ item.price }} ₽</p>
         </div>
         <div class="cancel">
-          <div class="bg-clean-img bg-cover bg-no-repeat p-3 btn"></div>
+          <div
+            class="bg-clean-img bg-cover bg-no-repeat p-3 btn"
+            @click="deleteItem(item)"
+          ></div>
         </div>
       </div>
     </div>
@@ -33,6 +41,14 @@
 </template>
 <script>
 export default {
+  methods: {
+    countMethod(item, type) {
+      this.$store.commit("basketItemMethod", { value: item, type: type });
+    },
+    deleteItem(item) {
+      this.$store.commit("basketItemDeleteMethod", { value: item });
+    },
+  },
   computed: {
     getBasket() {
       return this.$store.getters.getBasketMethod;

@@ -2,11 +2,11 @@
   <div class="flex justify-between font-semibold text-2xl mt-30px">
     <div class="flex space-x-3">
       <p>Всего пицц:</p>
-      <p class="font-extrabold">{{ getBasket.length }} шт.</p>
+      <p class="font-extrabold">{{ getbasketCount.count }} шт.</p>
     </div>
     <div class="flex space-x-3">
       <p>Сумма заказа:</p>
-      <p class="font-extrabold text-orange-1">900 ₽</p>
+      <p class="font-extrabold text-orange-1">{{ getbasketCount.price}} ₽</p>
     </div>
   </div>
   <div class="flex justify-between mt-40px">
@@ -30,8 +30,8 @@ import { RouterLink } from "vue-router";
 
 export default {
   computed: {
-    getBasket() {
-      return this.$store.getters.getBasketMethod;
+    getbasketCount() {
+      return this.$store.getters.getBasketCountCheck;
     },
   },
 };
