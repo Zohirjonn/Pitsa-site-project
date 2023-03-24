@@ -4,14 +4,17 @@
       <p
         class="text-3xl font-extrabold justify-center flex items-center mx-auto p-4 space-x-4"
       >
-        <span>Корзина пустая </span> <span class="smile p-6"></span>
+        <span>Корзина пустая </span>
+        <span class="bg-smile-img bg-no-repeat bg-cover p-4"></span>
       </p>
       <p class="text-lg max-w-560px text-center mx-auto">
         Вероятней всего, вы не заказывали ещё пиццу. Для того, чтобы заказать
         пиццу, перейди на главную страницу.
       </p>
     </div>
-    <div class="empty-img mx-auto w-80 my-16"></div>
+    <div
+      class="bg-empty-img bg-no-repeat bg-cover p-120px w-80 mx-auto my-16"
+    ></div>
     <div>
       <RouterLink to="/">
         <button

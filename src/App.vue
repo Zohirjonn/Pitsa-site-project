@@ -16,10 +16,10 @@
 </template>
 <script>
 import { RouterLink, RouterView } from "vue-router";
-import Navtop from "./components/Navtop.vue";
-import Korzina from "./components/navKorzinka.vue";
-import Loader from "./components/Loader.vue";
-import Footer from "./components/Footer.vue";
+import Navtop from "./components/Header/navHead/Navtop.vue";
+import Korzina from "./components/Header/navHead/navKorzinka.vue";
+import Loader from "./components/Loader/Loader.vue";
+import Footer from "./components/Footer/Footer.vue";
 export default {
   components: {
     Navtop,

@@ -4,7 +4,7 @@
       <span>Все пиццы</span>
     </div>
     <div class="cards grid grid-cols-4 gap-x-14 gap-y-16 relative">
-      <div class="card" v-for="item in this.$store.state.pizzas" :key="item.id">
+      <div class="card" v-for="item in getPizzas" :key="item.id">
         <div class="card-header flex flex-col justify-center mb-5">
           <div class="card-img flex justify-center">
             <img :src="item.imageUrl" alt="..." />
@@ -55,11 +55,14 @@
           </div>
           <div>
             <button
-              class="border border-orange-2 text-base py-2 px-4 rounded-large font-bold flex items-center justify-between gap-2 btn"
+              class="border border-orange-2 text-base py-2 px-4 rounded-large font-bold flex items-center justify-between gap-2"
               :class="
-                item.count !== 0 ? 'text-orange-1 ' : 'text-white-1 bg-orange-1'
+                (pizza.size == null ? '' : 'btn',
+                item.count !== 0
+                  ? 'text-orange-1 '
+                  : 'text-white-1 bg-orange-1')
               "
-              @click.prevent="addPizza(item)"
+              @click.prevent="addItemMethod(item)"
             >
               + Добавить
               <span
@@ -86,8 +89,7 @@
 
 <script>
 import axios from "axios";
-import { getTransitionRawChildren } from "vue";
-import Loader from "./Loader.vue";
+import Loader from "../Loader/Loader.vue";
 
 export default {
   components: {
@@ -112,25 +114,29 @@ export default {
       this.loader = true;
       const response = await axios.get("./data/db.json");
       const res = await response.data;
-      this.$store.state.pizzas = res.pizzas;
-      this.pizzas = this.$store.state.pizzas;
+      this.$store.commit("pushPizzasMethod", { value: res.pizzas });
+      // this.$store.state.pizzas = res.pizzas;
+      // this.pizzas = this.$store.state.pizzas;
       this.loader = false;
     },
-    addPizza(item) {
-      let index = -1;
+    addItemMethod(item) {
       const pizza = JSON.parse(
         JSON.stringify({
           id: this.pizza.id,
+          imageUrl: item.imageUrl,
+          name: item.name,
+          price: item.price,
           type: this.pizza.type,
           size: this.pizza.size,
           count: 1,
         })
       );
+      let index = -1;
       if (this.pizza.id == item.id) {
         if (this.pizza.type !== "" && this.pizza.size !== null) {
-          this.$store.commit("countIncrement", { value: item.id });
-          if (this.basket.length != 0) {
-            index = this.basket.findIndex(
+          this.$store.commit("pizzasCountIncrement", { value: item.id });
+          if (this.getBasket.length != 0) {
+            index = this.getBasket.findIndex(
               (el) =>
                 el.id === item.id &&
                 el.type == pizza.type &&
@@ -140,13 +146,16 @@ export default {
           console.log(item.id);
           console.log(index, "index");
           if (index == -1) {
-            this.basket.push(pizza);
+            // this.basket.push(pizza);
+            this.$store.commit("basketPushMethod", { value: pizza });
           } else {
-            this.basket[index].count++;
+            // this.basket[index].count++;
+            this.$store.commit("basketCountIncrement", { value: index });
+            console.log(this.getBasket, "basket");
           }
         }
       }
-      console.log("basket", this.basket);
+      this.pizza.size = null;
       this.pizza.count = 1;
     },
     typesMethod(item, typeItem) {
@@ -157,6 +166,14 @@ export default {
       if (this.pizza.id == item.id) {
         this.pizza.size = size;
       }
+    },
+  },
+  computed: {
+    getPizzas() {
+      return this.$store.getters.getPizzasMethod;
+    },
+    getBasket() {
+      return this.$store.getters.getBasketMethod;
     },
   },
   mounted() {

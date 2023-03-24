@@ -4,7 +4,7 @@
       <img src="../../public/images/Vector (4).svg" alt="" />
     </span>
     <span class="font-extrabold">Сортировка по: </span>
-    <span class="text-orange-1 border-dotted border-b-2"> популярности</span>
+    <span class="text-orange-1 border-dotted border-b-2">популярности</span>
   </div>
 </template>
 <script>

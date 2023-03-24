@@ -15,10 +15,12 @@ module.exports = {
         tt: " 0px 2px 4px rgba(0, 0, 0, 0.04)",
       },
       padding: {
+        "1px": "1px",
         "14px": "14px",
         "22px": "22px",
         "30px": "30px",
         "40px": "40px",
+        "120px": "120px",
       },
       margin: {
         "40px": "40px",
@@ -49,6 +51,21 @@ module.exports = {
       "10px": "10px",
       "5px": "5px",
       "50%": "50%",
+    },
+    backgroundImage: {
+      "pizza-logo": "url('./public/images/pitsanav.svg')",
+      "t-1": "url('./public/images/111.svg')",
+      "top-korz": "url('./public/images/korzina.svg')",
+      "empty-img": "url('./src/assets/images/shopping-cart-colour 1.svg')",
+      "smile-img": "url('./src/assets/images/😕.svg')",
+      "de-img": "url('./src/assets/images/Group 35.svg')",
+      "in-img": "url('./src/assets/images/Group 34.svg')",
+      "clean-img": "url('./src/assets/images/Group 36.svg')",
+      "kor-img":
+        "url('./src/assets/images/iconfinder_shopping-cart_2561279 1.svg')",
+      "trash-img":
+        "url('./src/assets/images/iconfinder_trash-2_3324927 1.svg')",
+      "path-img": "url('./src/assets/images/_Path_.svg')",
     },
   },
   plugins: [],
