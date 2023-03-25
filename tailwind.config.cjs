@@ -7,20 +7,44 @@ module.exports = {
         "1340px": "1340px",
         "820px": "820px",
         "560px": "560px",
+        "300px": "300px",
+        "250px": "250px",
+        "200px": "200px",
+        "160px": "160px",
+        "60%": "60%",
+      },
+      screens: {
+        sm: "640px",
+        // => @media (min-width: 640px) { ... }
+
+        md: "768px",
+        // => @media (min-width: 768px) { ... }
+
+        lg: "1024px",
+        // => @media (min-width: 1024px) { ... }
+
+        xl: "1340px",
+        // => @media (min-width: 1280px) { ... }
+
+        "2xl": "1536px",
+        // => @media (min-width: 1536px) { ... }
+        small: { max: "639.9px" },
       },
       borderWidth: {
         DEFAULT: "1px",
       },
       boxShadow: {
-        tt: " 0px 2px 4px rgba(0, 0, 0, 0.04)",
+        def: " 0px 2px 4px rgba(0, 0, 0, 0.04)",
+        fil: "0px 5px 15px rgba(0, 0, 0, 0.09)",
       },
       padding: {
-        DEFAULT: '1px',
+        DEFAULT: "1px",
         "14px": "14px",
         "22px": "22px",
         "30px": "30px",
         "40px": "40px",
         "120px": "120px",
+        "140px": "140px",
       },
       margin: {
         "40px": "40px",
@@ -28,10 +52,10 @@ module.exports = {
         "30px": "30px",
       },
       width: {
-        "22px": "22px",
+        "22px": "24px",
       },
       height: {
-        "22px": "22px",
+        "22px": "24px",
       },
     },
     colors: {

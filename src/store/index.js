@@ -4,6 +4,7 @@ export default createStore({
   state: {
     pizzas: [],
     basket: [],
+    options: "3",
   },
   getters: {
     getBasketMethod(state) {
@@ -20,6 +21,9 @@ export default createStore({
       });
 
       return basket;
+    },
+    getOptions(state) {
+      return state.options;
     },
   },
   mutations: {
@@ -47,16 +51,30 @@ export default createStore({
       if (type == "increment") {
         return state.basket[index].count++;
       } else if (type == "decrement") {
+        if (state.basket[index].count == 0) {
+          return;
+        }
         return state.basket[index].count--;
       }
     },
-
     basketItemDeleteMethod(state, payload) {
       let item = payload.value;
       let res = state.basket.filter(
         (el) => el.id != item.id || el.size != item.size || el.type != item.type
       );
       return (state.basket = res);
+    },
+    filterBasket(state, payload) {
+      return (state.options = payload.value);
+      // state.pizzas = state.pizzas.sort(
+      //   (a, b) => a.name.toUpperCase() - b.name.toUpperCase()
+      // );
+    },
+    changePriceMethod(state, payload) {
+      let id = payload.value[0];
+      let size = payload.value[1];
+      let pizzaItem = state.pizzas.find((el) => el.id == id);
+      let index = state.pizzas.findIndex((el) => el.id == id);
     },
   },
   action: {},

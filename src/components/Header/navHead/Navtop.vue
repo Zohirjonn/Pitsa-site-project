@@ -1,6 +1,6 @@
 <template>
-  <div class="flex gap-4">
-    <div class="bg-pizza-logo py-6 px-7 bg-cover bg-no-repeat"></div>
+  <div class="flex gap-1">
+    <div class="bg-pizza-logo p-4 bg-center bg-contain bg-no-repeat"></div>
     <img src="../../public/images/pitsanav.svg" alt="" />
     <div>
       <div>

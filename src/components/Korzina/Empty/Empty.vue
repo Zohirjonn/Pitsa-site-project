@@ -7,13 +7,13 @@
         <span>Корзина пустая </span>
         <span class="bg-smile-img bg-no-repeat bg-cover p-4"></span>
       </p>
-      <p class="text-lg max-w-560px text-center mx-auto">
+      <p class="text-lg max-w-560px text-center mx-auto small:max-w-60%">
         Вероятней всего, вы не заказывали ещё пиццу. Для того, чтобы заказать
         пиццу, перейди на главную страницу.
       </p>
     </div>
     <div
-      class="bg-empty-img bg-no-repeat bg-cover p-120px w-80 mx-auto my-16"
+      class="bg-empty-img bg-no-repeat bg-cover p-140px w-80 mx-auto my-16"
     ></div>
     <div>
       <RouterLink to="/">

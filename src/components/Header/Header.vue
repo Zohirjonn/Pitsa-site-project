@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-between mb-35px items-start">
+  <div class="flex justify-between mb-35px items-start small:flex-col space-x-10 small:space-x-0 small:gap-y-3">
     <HeaderButtons class="flex-4"/>
     <FilterPitsa class="flex-1"/>
   </div>

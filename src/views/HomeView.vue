@@ -1,9 +1,11 @@
 <template>
-  <div>
-    <Header />
-  </div>
-  <div>
-    <Pizza />
+  <div class="small:m-4">
+    <div>
+      <Header />
+    </div>
+    <div>
+      <Pizza />
+    </div>
   </div>
 </template>
 <script>

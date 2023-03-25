@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-820px mx-auto">
+  <div class="max-w-820px mx-auto small:mx-4">
     <KorzinkaHead />
     <KorzinkaCards />
     <KozinkaFooter />
