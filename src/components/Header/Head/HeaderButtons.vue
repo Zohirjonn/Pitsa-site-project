@@ -5,7 +5,7 @@
     :loop="true"
     :centeredSlides="true"
     :autoplay="{
-      delay: 1000,
+      delay: 2500,
       disableOnInteraction: true,
     }"
     :breakpoints="{
@@ -30,7 +30,7 @@
     class="mySwiper w-full h-full"
   >
     <swiper-slide
-      class="flex text-center mb-2 justify-center items-center py-14px  border-2 border-white-4 shadow-def bg-white-2 font-bold rounded-large hover:bg-orange-2 duration-100 active:bg-orange-1 text-xl active:text-white-2 small:py-1 small:px-5"
+      class="flex text-center mb-2 justify-center items-center py-14px border-2 border-white-4 shadow-def bg-white-2 font-bold rounded-large hover:bg-white-3 duration-100 active:bg-orange-1 text-xl active:text-white-2 small:py-1 small:px-5"
       v-for="button in buttons"
       :key="button"
       >{{ button }}</swiper-slide
