@@ -159,10 +159,10 @@ export default {
           }
           if (index == -1) {
             this.$store.commit("basketPushMethod", { value: pizza });
-            notify(pizza.name, pizza.type, pizza.size, pizza.price);
+            notify(pizza.name, pizza.type, pizza.size);
           } else {
             this.$store.commit("basketCountIncrement", { value: index });
-            notify(pizza.name, pizza.type, pizza.size, pizza.price);
+            notify(pizza.name, pizza.type, pizza.size);
           }
         }
       }
