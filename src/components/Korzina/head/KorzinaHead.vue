@@ -5,11 +5,11 @@
       <span class="font-extrabold text-3xl">Корзина</span>
     </div>
     <div
-      class="flex justify-center space-x-1 flex-initial w-48 items-center btn"
+      class="flex justify-center space-x-1 flex-initial w-48 items-center btn small:justify-end"
       @click="clearBasket"
     >
       <div class="bg-trash-img bg-no-repeat bg-cover p-3"></div>
-      <span class="text-white-3 hover:text-orange-1 ">Очистить корзину</span>
+      <span class="block text-white-3 hover:text-orange-1 small:hidden">Очистить корзину</span>
     </div>
   </div>
 </template>
