@@ -6,6 +6,7 @@ export function notify(name, type, size, count, price) {
     {
       position: toast.POSITION.TOP_RIGHT,
       rtl: false,
+      autoClose: 600,
     }
   );
 }
