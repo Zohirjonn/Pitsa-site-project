@@ -1,19 +1,27 @@
 <template>
-  <div class="text-black-1 text-base xl:mx-auto sm:mx-5 max-w-1340px mb-24 ">
-    <div
-      class="flex justify-between border-b-2 border-white-4 py-40px mb-5 mx-4"
-    >
-      <RouterLink to="/">
-        <Navtop />
-      </RouterLink>
-      <RouterLink to="/korzina">
-        <Korzina />
-      </RouterLink>
+  <div class="relative">
+    <div class="text-black-1 text-base xl:mx-auto sm:mx-5 max-w-1340px mb-24">
+      <div
+        class="flex justify-between border-b-2 border-white-4 py-40px mb-5 mx-4"
+      >
+        <RouterLink to="/">
+          <Navtop />
+        </RouterLink>
+        <RouterLink to="/korzina">
+          <Korzina />
+        </RouterLink>
+      </div>
+      <RouterView />
     </div>
-    <RouterView />
-  </div>
-  <div>
-    <Footer />
+    <RouterLink to="korzina">
+      <Korzina
+        class="fixed bottom-10 animate-bounce right-4"
+        v-if="getBasket.length > 0"
+      />
+    </RouterLink>
+    <div>
+      <Footer />
+    </div>
   </div>
 </template>
 <script>
@@ -31,6 +39,11 @@ export default {
   },
   data() {
     return {};
+  },
+  computed: {
+    getBasket() {
+      return this.$store.getters.getBasketMethod;
+    },
   },
 };
 </script>

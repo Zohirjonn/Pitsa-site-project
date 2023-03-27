@@ -6,7 +6,7 @@
       :key="item.id"
     >
       <div
-        class="card flex justify-between items-center space-x-4 mt-30px small:space-x-0 "
+        class="card flex justify-between items-center space-x-4 mt-30px "
       >
         <div class="card-header">
           <img :src="item.imageUrl" class="w-20 h-20" alt="" />

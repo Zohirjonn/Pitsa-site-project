@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex justify-end small:space-x-0 w-full items-start space-x-3 small:justify-between "
+    class="flex justify-end small:space-x-0 w-full items-start space-x-3 small:justify-between relative"
   >
     <span class="font-extrabold">Сортировка по: </span>
     <span class="text-black-1">
