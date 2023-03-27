@@ -3,28 +3,26 @@
     :slidesPerView="1"
     :spaceBetween="1"
     :loop="true"
-    :centeredSlides="true"
+    :centeredSlides="false"
     :autoplay="{
       delay: 2500,
       disableOnInteraction: true,
     }"
     :breakpoints="{
-      '@0.00': {
-        slidesPerView: 1,
-        spaceBetween: 5,
-      },
+      
       '@0.75': {
-        slidesPerView: 2,
+        slidesPerView: 1,
         spaceBetween: 8,
       },
       '@1.00': {
-        slidesPerView: 3,
+        slidesPerView: 2,
         spaceBetween: 10,
       },
       '@1.50': {
-        slidesPerView: 4,
+        slidesPerView: 3,
         spaceBetween: 15,
       },
+      
     }"
     :modules="modules"
     class="mySwiper w-full h-full"
