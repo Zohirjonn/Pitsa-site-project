@@ -6,7 +6,8 @@ export function notify(name, type, size) {
     {
       position: toast.POSITION.TOP_RIGHT,
       rtl: false,
-      autoClose: 1000,
+      autoClose: 600,
+      limit: 2,
     }
   );
 }
