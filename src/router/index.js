@@ -11,7 +11,7 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: "/korzina",
+      path: "korzina",
       name: "korzina",
       component: Korzina,
     },
