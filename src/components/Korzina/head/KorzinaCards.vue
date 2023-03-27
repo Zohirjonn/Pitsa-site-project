@@ -13,7 +13,7 @@
         </div>
         <div class="card-body">
           <h1 class="font-bold text-2xl small:text-xl">{{ item.name }}</h1>
-          <h1 class="text-white-3">{{ item.type }}, {{ item.size }} см.</h1>
+          <h1 class="text-white-3 flex justify-end mr-4">{{ item.type }}, {{ item.size }} см.</h1>
         </div>
       </div>
       <div
