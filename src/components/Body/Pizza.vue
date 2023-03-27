@@ -12,7 +12,9 @@
         :key="item.id"
       >
         <div class="card-header flex flex-col justify-center mb-5">
-          <div class="card-img flex justify-center mx-auto small:max-w-250px sm:max-w-250px md:max-w-300px">
+          <div
+            class="card-img flex justify-center mx-auto small:max-w-250px sm:max-w-250px md:max-w-300px"
+          >
             <img :src="item.imageUrl" alt="..." />
           </div>
           <div
@@ -56,7 +58,7 @@
                 "
                 @click="sizeMethod(item, size)"
               >
-                {{ size }} sm
+                {{ size }} см
               </button>
             </div>
           </div>
@@ -103,6 +105,8 @@
 <script>
 import axios from "axios";
 import Loader from "../Loader/Loader.vue";
+// import Fff from "./fff.vue";
+import { notify } from "./toast";
 
 export default {
   components: {
@@ -155,8 +159,10 @@ export default {
           }
           if (index == -1) {
             this.$store.commit("basketPushMethod", { value: pizza });
+            notify(pizza.name, pizza.type, pizza.size, pizza.price);
           } else {
             this.$store.commit("basketCountIncrement", { value: index });
+            notify(pizza.name, pizza.type, pizza.size, pizza.price);
           }
         }
       }
