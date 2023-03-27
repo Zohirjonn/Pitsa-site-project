@@ -106,7 +106,7 @@
 import axios from "axios";
 import Loader from "../Loader/Loader.vue";
 // import Fff from "./fff.vue";
-import { notify } from "./toast";
+import { notify } from "../toast";
 
 export default {
   components: {
@@ -166,12 +166,12 @@ export default {
           }
         }
       }
-      // this.pizza.size = null;
       this.pizza.count = 1;
     },
     typesMethod(item, typeItem) {
       this.pizza.id = item.id;
       this.pizza.type = typeItem;
+      this.pizza.size = null;
     },
     sizeMethod(item, size) {
       if (this.pizza.id == item.id) {

@@ -7,7 +7,7 @@ export function notify(name, type, size) {
       position: toast.POSITION.TOP_RIGHT,
       rtl: false,
       autoClose: 600,
-      limit: 2,
+      limit: 3,
     }
   );
 }

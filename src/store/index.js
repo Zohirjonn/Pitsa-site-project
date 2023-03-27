@@ -5,6 +5,41 @@ export default createStore({
     pizzas: [],
     basket: [],
     options: "3",
+    signType: 0,
+    signUpInputs: [
+      {
+        id: 1,
+        type: "text",
+        label: "Familiyangizni kiriting",
+        placeholder: "Familiya...",
+      },
+      {
+        id: 2,
+        type: "text",
+        label: "Ismingizni kiriting",
+        placeholder: "Ism...",
+      },
+      {
+        id: 3,
+        type: "email",
+        label: "Emailingizni kiriting",
+        placeholder: "Email...",
+      },
+      {
+        id: 4,
+        type: "password",
+        label: "Parol yarating",
+        placeholder: "Parol...",
+      },
+    ],
+    signInInputs: [
+      { id: 1, label: "Emailingizni kiriting", placeholder: "Email..." },
+      {
+        id: 2,
+        label: "Parolni kiriting",
+        placeholder: "parol...",
+      },
+    ],
   },
   getters: {
     getBasketMethod(state) {
@@ -24,6 +59,16 @@ export default createStore({
     },
     getOptions(state) {
       return state.options;
+    },
+    getSignType(state) {
+      return state.signType;
+    },
+    getSignType(state) {
+      if (state.signType) {
+        return state.signInInputs;
+      } else {
+        return state.signUpInputs;
+      }
     },
   },
   mutations: {
@@ -75,6 +120,9 @@ export default createStore({
       let size = payload.value[1];
       let pizzaItem = state.pizzas.find((el) => el.id == id);
       let index = state.pizzas.findIndex((el) => el.id == id);
+    },
+    changeSingTypeMethod(state, payload) {
+      return (state.signType = payload.value);
     },
   },
   action: {},

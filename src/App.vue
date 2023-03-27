@@ -7,6 +7,7 @@
         <RouterLink to="/">
           <Navtop />
         </RouterLink>
+        <LoginBtn />
         <RouterLink to="/korzina">
           <Korzina />
         </RouterLink>
@@ -30,12 +31,14 @@ import Navtop from "./components/Header/navHead/Navtop.vue";
 import Korzina from "./components/Header/navHead/navKorzinka.vue";
 import Loader from "./components/Loader/Loader.vue";
 import Footer from "./components/Footer/Footer.vue";
+import LoginBtn from "./components/login/LoginBtn.vue";
 export default {
   components: {
     Navtop,
     Korzina,
     Loader,
     Footer,
+    LoginBtn,
   },
   data() {
     return {};

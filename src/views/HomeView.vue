@@ -20,6 +20,7 @@ export default {
     return {};
   },
   methods: {},
+  
 };
 </script>
 <style lang=""></style>
