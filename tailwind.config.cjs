@@ -77,7 +77,7 @@ module.exports = {
       "50%": "50%",
     },
     backgroundImage: {
-      "pizza-logo": "url('./public/images/pitsanav.svg')",
+      "pizza-logo": "url('./images/pitsanav.svg')",
       "t-1": "url('./public/images/111.svg')",
       "top-korz": "url('./public/images/korzina.svg')",
       "empty-img": "url('./src/assets/images/shopping-cart-colour 1.svg')",
