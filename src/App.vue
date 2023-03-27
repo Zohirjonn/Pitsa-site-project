@@ -15,7 +15,7 @@
     </div>
     <RouterLink to="korzina">
       <Korzina
-        class="fixed bottom-10 animate-bounce right-4"
+        class="fixed bottom-4 animate-bounce right-4"
         v-if="getBasket.length > 0"
       />
     </RouterLink>
