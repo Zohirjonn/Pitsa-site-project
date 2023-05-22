@@ -9,7 +9,7 @@ export default createStore({
     signUpInputs: [
       {
         id: 1,
-        type: "text",
+        type: "number",
         label: "Familiyangizni kiriting",
         placeholder: "Familiya...",
       },

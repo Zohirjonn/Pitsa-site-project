@@ -4,6 +4,9 @@
       <Header />
     </div>
     <div>
+      <Scrollto />
+    </div>
+    <div>
       <Pizza />
     </div>
   </div>
@@ -11,16 +14,17 @@
 <script>
 import Header from "../components/Header/Header.vue";
 import Pizza from "../components/Body/Pizza.vue";
+import Scrollto from "../components/login/scrollto.vue";
 export default {
   components: {
     Header,
     Pizza,
+    Scrollto,
   },
   data() {
     return {};
   },
   methods: {},
-  
 };
 </script>
 <style lang=""></style>

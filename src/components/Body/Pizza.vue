@@ -3,6 +3,9 @@
     <div class="text-3xl font-extrabold text-center tracking-wider mb-35px">
       <span>Все пиццы</span>
     </div>
+    <div mask="###-###-##-3333">
+      <input class="bg-black-1 text-white-1 p-4 px-8" />
+    </div>
     <div
       class="cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-3 gap-y-6 xl:gap-y-16 xl:gap-x-16 relative"
     >
@@ -105,7 +108,7 @@
 <script>
 import axios from "axios";
 import Loader from "../Loader/Loader.vue";
-// import Fff from "./fff.vue";
+
 import { notify } from "../toast";
 
 export default {

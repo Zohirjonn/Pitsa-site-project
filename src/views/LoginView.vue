@@ -2,7 +2,7 @@
   <div class="w-60% mx-auto small:w-full p-10">
     <div class="flex justify-between mb-6 border-b-2 border-white-4">
       <button
-        class="btn border border-orange-1 text-base py-3 px-9 rounded-large mb-4"
+        class="btn border border-orange-1 text-base py-3 px-9 w-full rounded-large mb-4"
         v-for="item in signTypes"
         :key="item.signType"
         @click="getSignTypeMethod(item.type)"
@@ -33,6 +33,7 @@ export default {
   },
   methods: {
     getSignTypeMethod(item) {
+      
       this.$store.commit("changeSingTypeMethod", { value: item });
     },
   },
